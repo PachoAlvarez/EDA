@@ -1,5 +1,5 @@
 #---------------------------< Set working directory
-setwd("D:/aToCoursera/")
+setwd("D:/aToCoursera/") 
 
 #---------------------------< Read the problem data
 data <- read.table("household_power_consumption.txt", header=F, sep=";",
@@ -18,8 +18,8 @@ data$CompleteTime <- strptime(paste(data$Date, data$Time, sep=" "),
                               format="%d/%m/%Y %H:%M:%S")
 
 #-----------------------< Plot 2
+png(file='plot2.png', width = 480, height = 480)
 plot(data$CompleteTime, data$Global_active_power, type="l", 
      xlab="",
      ylab="Global Active Power (kilowatts)")
-dev.copy(png, file='plot2.png', width = 480, height = 480)
 dev.off()
